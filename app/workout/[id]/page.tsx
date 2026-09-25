@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import type { Workout } from "../../types/workout";
-//import AddToPlanButtons from "./AddToPlanButtons";
+import AddToPlanButtons from "./AddToPlanButtons";
 
 async function getWorkout(id: string): Promise<Workout | null> {
   const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`, {
@@ -69,7 +69,7 @@ export default async function WorkoutDetailPage({
             ))}
           </ol>
         </div>
-
+<AddToPlanButtons workout={workout} />
     
       </div>
     </div>

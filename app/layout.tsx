@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 //import Footer from "./components/Footer";
+import { PlanProvider } from "./context/PlanContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,11 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#0b0c0e] text-white min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-      
-      </body>
+      <body>
+  <PlanProvider>
+    <Navbar />
+    {children}
+   
+  </PlanProvider>
+</body>
     </html>
   );
 }
