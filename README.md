@@ -3,8 +3,8 @@
 FitLog is a dark-themed, responsive web application designed for focused strength training. Athletes can browse lifts across all major muscle groups, review exercise biomechanics, build a 5-exercise daily routine, and log their training metrics in real time.
 
 ## 🚀 Live Demo & Links
-- **Live Deployment:** 
-- **GitHub Repository:** 
+- **Live Deployment:** https://fit-log-lime.vercel.app/my-plan
+- **GitHub Repository:** https://github.com/tasnia-mahek/fit-log
 
 ## 🛠️ Technologies Used
 - **Next.js (App Router):** Fast client and server page rendering and dynamic route management.
