@@ -8,6 +8,8 @@ interface Toast {
   message: string;
 }
 
+type PlannedWorkout = Workout & { isDone: boolean };
+
 interface PlanContextType {
   plan: Workout[];
   saved: Workout[];
@@ -22,7 +24,7 @@ interface PlanContextType {
 const PlanContext = createContext<PlanContextType | undefined>(undefined);
 
 export function PlanProvider({ children }: { children: ReactNode }) {
-  const [plan, setPlan] = useState<Workout[]>([]);
+  const [plan, setPlan] = useState<PlannedWorkout[]>([]);
   const [saved, setSaved] = useState<Workout[]>([]);
   const [toasts, setToasts] = useState<Toast[]>([]);
 

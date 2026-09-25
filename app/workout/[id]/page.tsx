@@ -26,9 +26,7 @@ export default async function WorkoutDetailPage({
     notFound();
   }
 
-  const categories = Array.isArray(workout.category)
-    ? workout.category
-    : [workout.category];
+  const categories = workout.muscleGroups;
 
   const specs = [
     { label: "EQUIPMENT", value: workout.equipment || "Standard" },
@@ -36,7 +34,7 @@ export default async function WorkoutDetailPage({
     { label: "SETS", value: workout.sets || "4" },
     { label: "REPS", value: workout.reps || "8-12" },
     { label: "DURATION", value: `${workout.duration} min` },
-    { label: "CALORIES", value: `${workout.calories} kcal` },
+    { label: "CALORIES", value: `${workout.caloriesBurned} kcal` },
     { label: "RATING", value: workout.rating },
   ];
 
@@ -71,7 +69,7 @@ export default async function WorkoutDetailPage({
         {/* Right Column: Info & Specs */}
         <div className="flex flex-col">
           <div className="flex flex-wrap gap-2 mb-3">
-            {categories.map((c, i) => (
+            {categories.map((c: string, i: number) => (
               <span
                 key={i}
                 className="bg-[#ccff00] text-black text-xs font-black uppercase px-2.5 py-0.5 rounded-sm"

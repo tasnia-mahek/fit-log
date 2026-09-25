@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, Flame, Star } from "lucide-react";
-import type { Workout } from "@/types/workout";
+import type { Workout } from "@/app/types/workout";
 
 export default function WorkoutCard({ workout }: { workout: Workout }) {
   return (
@@ -22,7 +22,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
 
       <div className="p-4">
         <div className="mb-3 flex flex-wrap gap-2">
-          {workout.muscleGroups.map((tag) => (
+          {workout.muscleGroups.map((tag: string) => (
             <span
               key={tag}
               className="rounded-full bg-[#ccff00] px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-black"
